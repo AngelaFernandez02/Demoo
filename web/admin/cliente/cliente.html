@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="P&aacute;gina SICEFA Central">
+        <meta name="keywords" content="Sucursales, Productos y Seguimiento de pedidos de compras ">
+        <meta name="author" content="Andrea Gudalupe Concha D&iacute;az   22000944,
+              Alondra Goretti Martinez Saldaña     22001414,
+              Israel de Jesús Lira Navarro         22001353,
+              Angela Guadalupe Fernandez Gonzalez  22002375,
+              Brian Fernando Torres Chico          22001691 ">
+
+        <!-- Agregamos las referencias de Boostrap -->
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-grid.min.css">
+        <!-- Agregamos la referencia  de SweetAlert2 -->
+
+        <link rel="stylesheet" href="style/sweetalert2/sweetalert2.min.css">
+
+        <!-- Link para los iconos -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+        <style>
+            .card{
+
+                margin: auto;
+                background: #eee;
+
+                border: 2px solid transparent;
+
+                -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+                -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+                border-image: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%);
+
+                border-image-slice: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-center">
+                        <h3>M&oacute;dulo de Control de Clientes</h3> 
+                    </div>
+                    <div class="card-body">
+                        <div id="divDetalleCliente" class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <span class="h4">Detalle de Cliente</span>
+                                        <button class="float-end btn btn-outline-danger" onclick="cm.setDetalleClienteVisible(false);">X</button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form">
+                                            <div class="row">
+
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtIdCli" placeholder="Id:">
+                                                        <label class="form-label" for="txtIdCli">ID:</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtIdCliPersona" placeholder="Id:">
+                                                        <label class="form-label" for="txtIdCliPersona">ID Persona:</label>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="row mt-2">
+                                                <div class="col-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtNombreCli" placeholder="Nombre del cliente:">
+                                                        <label class="form-label" for="txtNombreCli">Nombre del Cliente:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtApellidoPaCli" placeholder="Apellido Paterno:">
+                                                        <label class="form-label" for="txtApellidoPaCli">Apellido Paterno del cliente:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtApellidoMaCli" placeholder="Apellido Materno:">
+                                                        <label class="form-label" for="txtApellidoMaCli">Apellido Materno del cliente:</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row mt-2">
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtRfcCli" placeholder="Rfc:">
+                                                        <label class="form-label" for="txtRfcCli">RFC:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <select id="cmbGenero" class="form-select" aria-label="G&ecaron;nero">
+                                                            <option value="H">Hombre</option>
+                                                            <option value="M">Mujer</option>
+                                                            <option value="O">Otro </option>
+                                                        </select>
+                                                        <label for="cmbGenero">G&eacute;nero</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="date" class="form-control" id="txtFechaNaciCli"/> 
+                                                        <label class="form-label" for="txtFechaNaciCli">Fecha de nacimiento:</label>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtTelefonoCli" placeholder="Telefono:">
+                                                        <label class="form-label" for="txtTelefonoCli">Telefono:</label>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+
+                                            <div class="row mt-2">
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtCurpCli" placeholder="Curp:">
+                                                        <label class="form-label" for="txtCurpCli">Curp:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtDireccionCli" placeholder="Direccion:">
+                                                        <label class="form-label" for="txtDireccionCli">Direccion:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtCodigoPostalCli" placeholder="Codigo Postal:">
+                                                        <label class="form-label" for="txtCodigoPostalCli">Codigo Postal:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtCiudadCli" placeholder="Ciudad:">
+                                                        <label class="form-label" for="txtCiudadCli">Ciuddad:</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="row mt-2">
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtEstadoCli" placeholder="Estado:">
+                                                        <label class="form-label" for="txtEstadoCli">Estado:</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input id="txtEstatusCli" type="number" class="form-control" placeholder="cmbActivoCli"/>
+                                                        <label for="txtEstatusCli">Estatus:</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtEmailCli" placeholder="txtEmailCli">
+                                                        <label class="form-label" for="txtEmailCli">Email:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtFechaRegistroCli" placeholder="txtfechaInCli">
+                                                        <label class="form-label" for="txtFechaRegistroCli">Fecha de registro:</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+
+
+                                            <div class="row mt-3">
+                                                <div class="col-12 justify-content-center">
+                                                    <div class="text-center">
+                                                        <button class="btn btn-primary me-2" onclick=""><i class="bi bi-bookmark" onclick ="cm.save();">   Guardar</i></button>
+                                                        <button class="btn btn-danger ms-2 me-2" onclick="cm.deleteCliente();"><i class="bi bi-trash3"></i>   Eliminar</button>
+                                                        <button class="btn btn-success ms-2 me-2" onclick="cm.clearForm();"><i class="bi bi-plus-circle"></i>  Moidificar</button>
+                                                        
+                                                    </div>
+                                                </div>
+                                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="divCatalogoCliente" class="row mt-2">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <span class="h4">Catalogo de Cliente</span>
+                                        <button class="ms-3 btn btn-outline-success" onclick="cm.clearAndShowDetalleCliente();"><i class="bi bi-plus"></i>Nuevo</button>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table mt-3" id="tabla-clientes">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre Completo</th>
+                                                    <th>Género</th>
+                                                    <th>Teléfono</th>
+                                                    <th>Dirección</th>
+                                                    <th>RFC</th>
+                                                    <th>CURP</th>
+                                                    <th>Fecha de Nacimiento</th>
+                                                    <th>Correo</th>
+                                                    <th>Fecha de Registro</th>
+                                                    <th>Codigo Postal</th>
+                                                    <th></th>
+
+                                                </tr>
+                                            <tbody id="tbodyClientes">
+                                            </tbody>
+
+                                        </table>
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+

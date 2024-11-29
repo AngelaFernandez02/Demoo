@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="row"> 
+            <div class="col-12 mt-2"> 
+                <div class="card"> 
+                    <div class="card-header d-flex justify-content-center"> 
+                        <h3>M&oacute;dulo gesti&oacute;n de pedidos de compra</h3> 
+                    </div> 
+                    <div class="card-body"> 
+                        <div class="row">
+                            <div class="col-12"> 
+                                <div class="card">
+                                    <div class="card-header">
+                                        <span class= "h4">Detalles de compra</span>
+                                        <button class="float-end btn btn-outline-danger"/>
+                                        <i class= "fa fa-times"></i>
+                                        </button>
+                                    </div> 
+                                    <div class="card-body mt-2"> 
+                                        <div class="form"> 
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtIdCompra" placeholder="IdCompra:" />
+                                                        <label class="form-label" for="txtIdCompra">IdCompra:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="txtIdSucursal" placeholder="IdSucursal:" />
+                                                        <label class="form-label" for="txtIdSucursal">IdSucursal:</label> 
+                                                    </div>
+                                                </div>
+                                                <div class="col-4"> 
+                                                    <div class="form-floating mb-3"> 
+                                                        <input type="text" class="form-control" id="txtIdEmpleado" placeholder="IdEmpleado:" />
+                                                        <label class="form-label" for="txtIdEmpleado">IdEmpleado:</label>
+                                                    </div> 
+                                                </div> 
+                                                <div class="row mt-2">
+                                                    <div class="col-4"> 
+                                                        <div class="form-floating mb-3"> 
+                                                            <input type="text" class="form-control" id="txtFechaCompra" placeholder="fechaCompra:"> 
+                                                            <label class="form-label" for="txtFechaCompra">Fecha:</label>
+                                                        </div> 
+                                                    </div> 
+                                                    <div class="col-4"> 
+                                                        <div class="form-floating mb-3 "> 
+                                                            <input type="text" class="form-control" id="txtHoraCompra" placeholder="horaCompra:" />
+                                                            <label class="form-label" for="txtHoraCompra">Hora compra:</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4"> 
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="txtNombreProducto" placeholder="nombreProducto:"/> 
+                                                            <label class="form-label" for="txtNombreProducto">Producto:</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-4">
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="txtCantidad" placeholder="cantidad:"/> 
+                                                            <label class="form-label" for="txtCantidad">cantidad:</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4"> 
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="txtPrecioCompra" placeholder="precioCompra:" />
+                                                            <label class="form-label" for="txtPrecioCompra">Precio compra:</label>
+                                                        </div> 
+                                                    </div>
+                                                    <div class="col-4"> 
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="txtCodigoCompra" placeholder="CodigoCompra:" />
+                                                            <label class="form-label" for="txtCodigoCompra">C&oacute;digo Compra:</label>
+                                                        </div> 
+                                                    </div> 
+                                                    <div class="col-4"> 
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="txtEstatusCompra" placeholder="estatusCompra:" />
+                                                            <label class="form-label" for="txtEstatusCompra">Estatus:</label>
+                                                        </div> 
+                                                    </div> 
+                                                </div> 
+                                                <div class="row mt-3"> 
+                                                    <div class="col-12 justify-content-center"> 
+                                                        <div class="text-center"> 
+                                                            <button class="btn btn-primary me-2">
+                                                                <i class="fa fa-floppy-disk"></i>
+                                                                Guardar
+                                                            </button>
+                                                            <button class="btn btn-danger ms-2 me-2">
+                                                                <i class="fa fa-trash-can"></i>
+                                                                Eliminar
+                                                            </button>
+                                                            <button class="btn btn-success ms-2 me-2">
+                                                                <i class="fa fa-plus"></i>
+                                                                Nuevo
+                                                            </button>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header"> 
+                        <h4>Cat&aacute;logo de compras</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>C&oacute;digo de compra</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Estatus</th>
+                                </tr>   
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>7001</td>
+                                    <td>2023-12-11</td>
+                                    <td>5:00</td>
+                                    <td>Paracetamol</td>
+                                    <td>15</td>
+                                    <td>Pendiente</td>
+                                </tr>
+                                <tr>
+                                    <td>7002</td>
+                                    <td>2023-02-10</td>
+                                    <td>6:00</td>
+                                    <td>Ibuprofeno</td>
+                                    <td>15</td>
+                                    <td>Cancelada</td>
+                                </tr>   
+                                <tr>
+                                    <td>7003</td>
+                                    <td>2022-03-14</td>
+                                    <td>7:00</td>
+                                    <td>Amoxicilina</td>
+                                    <td>45</td>
+                                    <td>Cancelada</td>
+                                </tr>    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
